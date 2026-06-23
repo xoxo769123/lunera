@@ -755,54 +755,7 @@ SORA
 انتعاش قمري هادئ وأناقة يومية.
 
 مزيج نقي يجمع بين الزهور البيضاء
-وخشب الصندل والمسك الناعم.
-
-<br><br>
-
-Moonlit freshness.
-
-Clean, elegant and timeless.
-
-Perfect for everyday sophistication.
-
-</p>
-
-<div class="notes">
-
-<div class="note">
-
-<h4>المقدمة</h4>
-
-<p>
-Fresh Citrus<br>
-Pink Pepper
-</p>
-
-</div>
-
-<div class="note">
-
-<h4>القلب</h4>
-
-<p>
-Jasmine<br>
-White Flowers
-</p>
-
-</div>
-
-<div class="note">
-
-<h4>القاعدة</h4>
-
-<p>
-Sandalwood<br>
-Soft Musk
-</p>
-
-</div>
-
-</div>
+وخ wood...</p>
 
 </div>
 
@@ -997,6 +950,75 @@ class="submit-btn">
 </div>
 
 </section>
+
+<!-- Floating WhatsApp button -->
+<a id="whatsappBtn" class="whatsapp" href="https://wa.me/966596032819" target="_blank" rel="noopener noreferrer">واتساب</a>
+
+<script>
+(function(){
+  // رقم الواتساب بصيغة دولية بدون + أو 00
+  const OWNER_PHONE = '966596032819';
+
+  const orderForm = document.getElementById('orderForm');
+  if (!orderForm) return;
+
+  function sanitizePhone(p){
+    return p.replace(/[^0-9+]/g, '');
+  }
+
+  function buildMessage(data){
+    return [
+      'طلب جديد من موقع Lunéra',
+      'الاسم: ' + data.name,
+      'جوال العميل: ' + data.clientPhone,
+      'العطر: ' + data.perfume,
+      'ملاحظات: ' + (data.notes || '-')
+    ].join('\n');
+  }
+
+  orderForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const nameEl = document.getElementById('name');
+    const phoneEl = document.getElementById('phone');
+    const perfumeEl = document.getElementById('perfume');
+    const notesEl = document.getElementById('notes');
+
+    const name = nameEl ? nameEl.value.trim() : '';
+    const clientPhone = phoneEl ? sanitizePhone(phoneEl.value.trim()) : '';
+    const perfume = perfumeEl ? perfumeEl.value.trim() : '';
+    const notes = notesEl ? notesEl.value.trim() : '';
+
+    if (!name || !clientPhone) {
+      alert('الرجاء إدخال الاسم ورقم الجوال.');
+      return;
+    }
+
+    const msg = buildMessage({ name, clientPhone, perfume, notes });
+    const waLink = 'https://wa.me/' + OWNER_PHONE + '?text=' + encodeURIComponent(msg);
+
+    // افتح واتساب في نافذة جديدة
+    window.open(waLink, '_blank');
+
+    // إعادة تعيين النموذج
+    orderForm.reset();
+
+    // عرض إشعار نجاح قصير
+    try{
+      // استخدام Toast إن وُجد، وإلا alert
+      if (window.Toast) {
+        Toast.show('تم فتح واتساب لإرسال الطلب — تأكد من الضغط على إرسال.');
+      } else {
+        setTimeout(function(){ alert('تم فتح واتساب لإرسال الطلب — تأكد من الضغط على إرسال.'); }, 400);
+      }
+    }catch(err){ console.log(err); }
+  });
+
+  // حدّث رابط زر الواتساب العائم (إن وُجد)
+  const waBtn = document.getElementById('whatsappBtn');
+  if (waBtn) waBtn.href = 'https://wa.me/' + OWNER_PHONE;
+})();
+</script>
 
 </body>
 
