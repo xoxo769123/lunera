@@ -241,156 +241,6 @@ color:#d9d9d9;
 
 }
 
-@media(max-width:900px){
-
-header{
-
-padding:18px 5%;
-
-}
-
-.logo{
-
-font-size:28px;
-
-}
-
-nav{
-
-gap:15px;
-
-}
-
-nav a{
-
-font-size:14px;
-
-}
-
-.hero h1{
-
-font-size:60px;
-
-}
-
-.hero h2{
-
-font-size:24px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.section-title{
-
-font-size:42px;
-
-}
-
-.story p{
-
-font-size:18px;
-
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-LUNÉRA
-</div>
-
-<nav>
-
-<a href="#">الرئيسية</a>
-
-<a href="#story">
-قصتنا
-</a>
-
-<a href="#perfumes">
-العطور
-</a>
-
-<a href="#order">
-اطلب الآن
-</a>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>LUNÉRA</h1>
-
-<h2>
-THE MOON IN A BOTTLE
-</h2>
-
-<p>
-
-ليس مجرد عطر...
-بل ذكرى تحفظ داخل زجاجة
-
-</p>
-
-<a href="#perfumes" class="hero-btn">
-
-اكتشف المجموعة
-
-</a>
-
-</div>
-
-</section>
-
-<section id="story" class="story">
-
-<h2 class="section-title">
-قصة Lunéra
-</h2>
-
-<p>
-
-ولدت Lunéra من فكرة بسيطة:
-
-أن يحمل كل عطر إحساساً مختلفاً،
-تماماً كما يغير القمر شكله كل ليلة.
-
-<br><br>
-
-AIRA • VÉRA • SORA
-
-<br><br>
-
-لكل زجاجة قصة،
-ولكل رشة أثر لا ينسى.
-
-</p>
-
-</section>
-<section id="perfumes">
-
-<h2 class="section-title">
-Collection
-</h2>
-
-<style>
-
 .perfume{
 
 display:grid;
@@ -538,6 +388,151 @@ color:#c9a16f;
 color:#b9d6ff;
 }
 
+/* Registration Section Styles */
+
+#order{
+background: rgba(255,255,255,.02);
+border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.form-container{
+max-width:700px;
+margin:0 auto;
+}
+
+.form-group{
+margin-bottom:25px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-size:18px;
+margin-bottom:10px;
+color:var(--moon);
+font-weight:700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+padding:15px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.1);
+border-radius:10px;
+color:white;
+font-size:16px;
+font-family:'Cairo',sans-serif;
+transition:.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+color:rgba(255,255,255,.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+outline:none;
+background:rgba(255,255,255,.08);
+border-color:var(--blue);
+}
+
+.form-group textarea{
+resize:vertical;
+min-height:120px;
+}
+
+.error-message{
+color:#ff6b6b;
+font-size:14px;
+margin-top:5px;
+display:none;
+}
+
+.error-message.show{
+display:block;
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error{
+border-color:#ff6b6b;
+background:rgba(255,107,107,.08);
+}
+
+.submit-btn{
+padding:18px 55px;
+background:linear-gradient(45deg,#8eb7ff,#dfeaff);
+color:#071526;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:900;
+cursor:pointer;
+transition:.35s;
+width:100%;
+}
+
+.submit-btn:hover{
+transform:translateY(-3px);
+}
+
+.submit-btn:active{
+transform:translateY(-1px);
+}
+
+.success-message{
+background:rgba(76,175,80,.1);
+border:1px solid rgba(76,175,80,.3);
+color:#4caf50;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+text-align:center;
+display:none;
+font-size:18px;
+font-weight:700;
+}
+
+.success-message.show{
+display:block;
+}
+
+.contact-info{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:15px;
+margin-top:40px;
+text-align:center;
+}
+
+.contact-info h4{
+font-size:24px;
+margin-bottom:15px;
+color:var(--moon);
+}
+
+.whatsapp-link{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:15px 30px;
+background:linear-gradient(45deg,#25d366,#20ba58);
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.3s;
+margin-top:15px;
+}
+
+.whatsapp-link:hover{
+transform:scale(1.05);
+}
+
 @media(max-width:1000px){
 
 .perfume{
@@ -576,7 +571,154 @@ max-height:450px;
 
 }
 
+@media(max-width:900px){
+
+header{
+
+padding:18px 5%;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+nav{
+
+gap:15px;
+
+}
+
+nav a{
+
+font-size:14px;
+
+}
+
+.hero h1{
+
+font-size:60px;
+
+}
+
+.hero h2{
+
+font-size:24px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+}
+
+.story p{
+
+font-size:18px;
+
+}
+
+}
+
 </style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+LUNÉRA
+</div>
+
+<nav>
+
+<a href="#">الرئيسية</a>
+
+<a href="#story">
+قصتنا
+</a>
+
+<a href="#perfumes">
+العطور
+</a>
+
+<a href="#order">
+اطلب الآن
+</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>LUNÉRA</h1>
+
+<h2>
+THE MOON IN A BOTTLE
+</h2>
+
+<p>
+
+ليس مجرد عطر...
+بل ذكرى تحفظ داخل زجاجة
+
+</p>
+
+<a href="#perfumes" class="hero-btn">
+
+اكتشف المجموعة
+
+</a>
+
+</div>
+
+</section>
+
+<section id="story" class="story">
+
+<h2 class="section-title">
+قصة Lunéra
+</h2>
+
+<p>
+
+ولدت Lunéra من فكرة بسيطة:
+
+أن يحمل كل عطر إحساساً مختلفاً،
+تماماً كما يغير القمر شكله كل ليلة.
+
+<br><br>
+
+AIRA • VÉRA • SORA
+
+<br><br>
+
+لكل زجاجة قصة،
+ولكل رشة أثر لا ينسى.
+
+</p>
+
+</section>
+
+<section id="perfumes">
+
+<h2 class="section-title">
+Collection
+</h2>
 
 <!-- AIRA -->
 
@@ -715,4 +857,341 @@ Amber
 
 </div>
 
-{
+<div class="note">
+
+<h4>القاعدة</h4>
+
+<p>
+Oud<br>
+Dark Woods
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SORA -->
+
+<div class="perfume">
+
+<div class="image">
+
+<img src="sora.png.jpg"
+alt="SORA">
+
+</div>
+
+<div class="content">
+
+<h3 class="sora">
+SORA
+</h3>
+
+<p>
+
+المرحلة الوسطى بين التوازن والانسجام.
+
+هو الانتقال الهادئ بين الظلام والنور،
+يبدأ بدفء خشب الصندل، يتفتح بقلب من الياسمين،
+ويستقر على لمسة فلفل وردي.
+
+<br><br>
+
+The perfect balance between harmony and equilibrium.
+
+A serene transition between darkness and light,
+soft woods meet delicate florals
+in an elegant dance of warmth and grace.
+
+</p>
+
+<div class="notes">
+
+<div class="note">
+
+<h4>المقدمة</h4>
+
+<p>
+Sandalwood<br>
+Warm Wood<br>
+Soft Spice
+</p>
+
+</div>
+
+<div class="note">
+
+<h4>القلب</h4>
+
+<p>
+Jasmine<br>
+Floral Notes<br>
+Delicate Bloom
+</p>
+
+</div>
+
+<div class="note">
+
+<h4>القاعدة</h4>
+
+<p>
+Pink Pepper<br>
+Warm Amber<br>
+Elegant Trail
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REGISTRATION SECTION -->
+
+<section id="order">
+
+<h2 class="section-title">
+اطلب الآن
+</h2>
+
+<div class="form-container">
+
+<div class="success-message" id="successMessage">
+تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.
+</div>
+
+<form id="registrationForm">
+
+<div class="form-group">
+<label for="name">الاسم الكامل</label>
+<input 
+type="text" 
+id="name" 
+name="name" 
+placeholder="أدخل اسمك الكامل"
+required>
+<div class="error-message" id="nameError"></div>
+</div>
+
+<div class="form-group">
+<label for="email">البريد الإلكتروني</label>
+<input 
+type="email" 
+id="email" 
+name="email" 
+placeholder="أدخل بريدك الإلكتروني"
+required>
+<div class="error-message" id="emailError"></div>
+</div>
+
+<div class="form-group">
+<label for="phone">رقم الهاتف</label>
+<input 
+type="tel" 
+id="phone" 
+name="phone" 
+placeholder="أدخل رقم هاتفك (مثال: 0501234567)"
+required>
+<div class="error-message" id="phoneError"></div>
+</div>
+
+<div class="form-group">
+<label for="perfume">اختر العطر المفضل</label>
+<select id="perfume" name="perfume" required>
+<option value="" disabled selected>اختر عطراً</option>
+<option value="AIRA">AIRA - نور ناعم يلامس الحواس</option>
+<option value="VERA">VÉRA - الغموض في أعمق صوره</option>
+<option value="SORA">SORA - المرحلة الوسطى بين التوازن والانسجام</option>
+<option value="All">جميع المجموعة</option>
+</select>
+<div class="error-message" id="perfumeError"></div>
+</div>
+
+<div class="form-group">
+<label for="quantity">الكمية</label>
+<input 
+type="number" 
+id="quantity" 
+name="quantity" 
+min="1" 
+max="10"
+placeholder="عدد الزجاجات"
+value="1"
+required>
+<div class="error-message" id="quantityError"></div>
+</div>
+
+<div class="form-group">
+<label for="message">رسالتك (اختياري)</label>
+<textarea 
+id="message" 
+name="message" 
+placeholder="أي طلب أو ملاحظة خاصة؟"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+أرسل الطلب عبر واتساب
+</button>
+
+</form>
+
+<div class="contact-info">
+<h4>💬 التواصل المباشر</h4>
+<p style="font-size:16px; color:#d9d9d9; margin-bottom:15px;">
+أو تواصل معنا مباشرة على واتساب
+</p>
+<a href="https://wa.me/966596032819" target="_blank" class="whatsapp-link">
+📱 فتح واتساب
+</a>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+// Form Validation and WhatsApp Integration
+
+const form = document.getElementById('registrationForm');
+const successMessage = document.getElementById('successMessage');
+
+// Validation Rules
+const validations = {
+name: {
+validate: (value) => value.trim().length >= 3,
+error: 'الاسم يجب أن يكون 3 أحرف على الأقل'
+},
+email: {
+validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+error: 'البريد الإلكتروني غير صحيح'
+},
+phone: {
+validate: (value) => /^\d{9,15}$/.test(value.replace(/\D/g, '')),
+error: 'رقم الهاتف يجب أن يكون 9-15 أرقام'
+},
+quantity: {
+validate: (value) => value >= 1 && value <= 10,
+error: 'الكمية يجب أن تكون بين 1 و 10'
+}
+};
+
+// Real-time validation
+document.querySelectorAll('input, select, textarea').forEach(field => {
+if (field.id !== 'message') {
+field.addEventListener('blur', validateField);
+field.addEventListener('input', () => {
+if (field.classList.contains('error')) {
+validateField({ target: field });
+}
+});
+}
+});
+
+function validateField(e) {
+const field = e.target;
+const validation = validations[field.id];
+const errorElement = document.getElementById(field.id + 'Error');
+
+if (field.id === 'message') return;
+
+let isValid = true;
+let errorMsg = '';
+
+if (field.id === 'perfume') {
+isValid = field.value !== '';
+errorMsg = 'يجب اختيار عطر';
+} else if (validation) {
+isValid = validation.validate(field.value);
+errorMsg = validation.error;
+} else {
+isValid = field.value.trim() !== '';
+errorMsg = 'هذا الحقل مطلوب';
+}
+
+if (isValid) {
+field.classList.remove('error');
+errorElement.classList.remove('show');
+} else {
+field.classList.add('error');
+errorElement.textContent = errorMsg;
+errorElement.classList.add('show');
+}
+
+return isValid;
+}
+
+// Form submission
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+
+// Validate all fields
+const fields = ['name', 'email', 'phone', 'quantity', 'perfume'];
+const isFormValid = fields.every(fieldId => {
+const field = document.getElementById(fieldId);
+return validateField({ target: field });
+});
+
+if (!isFormValid) return;
+
+// Get form data
+const formData = {
+name: document.getElementById('name').value,
+email: document.getElementById('email').value,
+phone: document.getElementById('phone').value,
+perfume: document.getElementById('perfume').value,
+quantity: document.getElementById('quantity').value,
+message: document.getElementById('message').value || 'بدون ملاحظات'
+};
+
+// Prepare WhatsApp message
+const message = encodeURIComponent(
+`*طلب جديد من LUNÉRA*\n\n` +
+`الاسم: ${formData.name}\n` +
+`البريد: ${formData.email}\n` +
+`الهاتف: ${formData.phone}\n` +
+`العطر: ${formData.perfume}\n` +
+`الكمية: ${formData.quantity} زجاجة\n` +
+`الملاحظات: ${formData.message}`
+);
+
+// Open WhatsApp
+const whatsappURL = `https://wa.me/966596032819?text=${message}`;
+window.open(whatsappURL, '_blank');
+
+// Show success message
+successMessage.classList.add('show');
+form.reset();
+document.querySelectorAll('input, select').forEach(f => f.classList.remove('error'));
+document.querySelectorAll('.error-message').forEach(e => e.classList.remove('show'));
+
+// Hide success message after 5 seconds
+setTimeout(() => {
+successMessage.classList.remove('show');
+}, 5000);
+});
+
+// Prevent non-numeric input in phone field
+document.getElementById('phone').addEventListener('keypress', (e) => {
+if (!/\d/.test(e.key)) e.preventDefault();
+});
+
+// Prevent non-numeric input in quantity field
+document.getElementById('quantity').addEventListener('keypress', (e) => {
+if (!/\d/.test(e.key)) e.preventDefault();
+});
+
+</script>
+
+</body>
+
+</html>
